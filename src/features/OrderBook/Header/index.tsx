@@ -18,8 +18,8 @@ const Header = (props: IHeaderProps) => {
       <div className="actions">
         <button onClick={props.onConnect}>Connect</button>
         <button onClick={props.onDisonnect}>Disconnect</button>
-        <button onClick={props.onPrecisionHigher}>.0</button>
-        <button onClick={props.onPrecisionLower}>.00</button>
+        <button onClick={props.onPrecisionLower}>.0</button>
+        <button onClick={props.onPrecisionHigher}>.00</button>
       </div>
     </StyledRoot>
   );
