@@ -34,14 +34,20 @@ export default OrderList;
 
 const StyledRoot = styled.div`
   width: 100%;
+  & > div:nth-child(even) {
+    background: rgba(0,0,0,0.2)
+  }
 `
 
 const StyledHeaderCell = styled.div`
   width: 33.33%;
+  padding: 5px;
 `
 
 const StyledDataCell = styled.div`
   width: 33.33%;
+  line-height: 20px;
+  padding: 5px;
 `
 
 const StyledRow = styled.div`
