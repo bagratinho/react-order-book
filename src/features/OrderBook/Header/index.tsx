@@ -29,16 +29,7 @@ export default Header;
 
 const StyledRoot = styled.div`
   display: flex;
-  & > i {
-    
-  }
-  span {
-    
-  }
   .actions {
     margin-left: auto;
-    > i {
-
-    }
   }
 `
