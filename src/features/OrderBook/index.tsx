@@ -43,7 +43,7 @@ const OrderBook = (props: IOrderBookProps) => {
       webSocketService.current.send({
         event:"subscribe", 
         channel:"book", 
-        symbol: `tBTCUSD`, 
+        symbol: `t${props.pair}`, 
         prec: precisionPointsMap[precisionPoints], 
         len:"25" ,
         frec: "F1",
