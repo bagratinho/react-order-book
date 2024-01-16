@@ -52,6 +52,7 @@ const StyledDataCell = styled.div`
 
 const StyledRow = styled.div<{reverse?: boolean}>`
   flex-direction: ${props => !!props.reverse ? "row-reverse" : "row"};
+  text-align: ${props => !!props.reverse ? "right" : "left"};
   display: flex;
   height: 30px;
   font-size: 12px;
