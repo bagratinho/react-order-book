@@ -12,14 +12,14 @@ const OrderList = (props: IOrderListProps) => {
   const list = props.list ? props.revert ? props.list.slice().reverse() : props.list : null;
   return (
     <StyledRoot>
-      <StyledRow>
+      <StyledRow reverse={props.revert}>
         {headers.map((item: string) => <StyledHeaderCell key={item}>{item}</StyledHeaderCell>)}
       </StyledRow>   
       {list ? list.map((item: any) => {
         if (!item) return null;
         const [ price, count, amount ] = item;
         return (
-          <StyledRow key={price}>
+          <StyledRow reverse={props.revert} key={price}>
             <StyledDataCell>{price}</StyledDataCell>
             <StyledDataCell>{Math.abs(amount)}</StyledDataCell>
             <StyledDataCell>{count}</StyledDataCell>
@@ -50,7 +50,8 @@ const StyledDataCell = styled.div`
   padding: 5px;
 `
 
-const StyledRow = styled.div`
+const StyledRow = styled.div<{reverse?: boolean}>`
+  flex-direction: ${props => !!props.reverse ? "row-reverse" : "row"};
   display: flex;
   height: 30px;
   font-size: 12px;
