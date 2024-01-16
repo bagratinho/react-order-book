@@ -99,7 +99,10 @@ export default OrderBook;
 
 const StyledRoot = styled.div`
   font-family: arial;
-  width: 100%;
+  width: calc(100% - 40px);
+  background: #02ca9b;
+  color: #fff;
+  padding: 20px;
   & .list-wrapper {
     display: flex;
     & > div {
