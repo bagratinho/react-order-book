@@ -51,12 +51,12 @@ const OrderBook = (props: IOrderBookProps) => {
     }
   })
   const handlePrecisionHigher = () => {
-    handleDisconnect();
+    handleDisconnect(false);
     setPrecisionPoints(state => state < 4 ? state + 1 : state) 
     handleConnect();
   }
   const handlePrecisionLower = () => {
-    handleDisconnect();
+    handleDisconnect(false);
     setPrecisionPoints((state => state > 0 ? state - 1 : state) ) 
     handleConnect();
   }
@@ -65,8 +65,8 @@ const OrderBook = (props: IOrderBookProps) => {
     webSocketService.current = new WebSocketService();
   }
 
-  const handleDisconnect = () => {
-    webSocketService.current.closeConnection();
+  const handleDisconnect = (dispatchDisconnect: boolean) => {
+    webSocketService.current.closeConnection(dispatchDisconnect);
   }
 
   return (
@@ -76,7 +76,7 @@ const OrderBook = (props: IOrderBookProps) => {
         onPrecisionHigher={handlePrecisionHigher}
         onPrecisionLower={handlePrecisionLower}
         onConnect={handleConnect}
-        onDisonnect={handleDisconnect}
+        onDisonnect={() => handleDisconnect(true)}
       />
       <div className="list-wrapper">
         <div className="bid-list">
